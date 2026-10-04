@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #070a12;
+  --color-ink-2: #0c111d;
+  --color-ink-3: #131a2a;
+  --color-line: #1e2739;
+  --color-mute: #8b93a7;
+  --color-chalk: #e8ecf5;
+
+  --color-gold: #f2c14e;
+  --color-gold-deep: #c8922a;
+  --color-teal: #4fd1b5;
+  --color-coral: #ff7e6b;
+  --color-ice: #9cc0ff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-chalk);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: #070a12;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070a12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #24304a;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-deep);
+  }
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────────────── */
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 126, 107, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(255, 126, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 126, 107, 0);
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes scan-y {
+  0% {
+    transform: translateY(-110%);
+  }
+  100% {
+    transform: translateY(420%);
+  }
+}
+@keyframes line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes intro-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.7em) rotate(2deg);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    filter: blur(0);
+  }
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    transform: scale(1.08);
+    filter: blur(14px);
+    visibility: hidden;
+  }
+}
+
+/* ── Utilities ─────────────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--rd, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hairline {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line) 12%,
+    var(--color-line) 88%,
+    transparent
+  );
+}
+
+.marquee-track {
+  animation: marquee-x 38s linear infinite;
+}
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+.tilt-card {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    background-color 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
