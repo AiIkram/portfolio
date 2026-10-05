@@ -13,7 +13,7 @@ export const PROFILE = {
   links: {
     github: "https://github.com/AiIkram",
     linkedin: "https://www.linkedin.com/in/ikram-aissiou/",
-    scholar: "https://scholar.google.com/citations?user=UiSUKFEAAAAJ",
+    scholar: "https://scholar.google.com/citations?user=xvTADnEAAAAJ&hl=en",
   },
 
   portrait: {
