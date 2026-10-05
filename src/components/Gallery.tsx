@@ -8,15 +8,6 @@ const TONE: Record<string, { chip: string; ring: string; dot: string }> = {
   ice: { chip: "text-ice border-ice/40 bg-ice/10", ring: "hover:border-ice/70", dot: "bg-ice" },
 };
 
-function CameraIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-      <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7a1 1 0 0 0 .83-.45l.94-1.4A1 1 0 0 1 9.8 3.7h4.4a1 1 0 0 1 .83.45l.94 1.4A1 1 0 0 0 16.8 6h1.7A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z" />
-      <circle cx="12" cy="12.8" r="3.6" />
-    </svg>
-  );
-}
-
 function Arrow({ dir }: { dir: "prev" | "next" }) {
   return (
     <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -31,7 +22,7 @@ function Arrow({ dir }: { dir: "prev" | "next" }) {
 
 export default function Gallery() {
   const [open, setOpen] = useState<number | null>(null);
-  const real = GALLERY.filter((g) => !g.placeholder);
+  const real = GALLERY;
 
   const move = useCallback(
     (d: number) => {
@@ -58,46 +49,22 @@ export default function Gallery() {
     };
   }, [open, move]);
 
-  let realIndex = -1;
-
   return (
     <>
-      <div className="grid auto-rows-[168px] sm:auto-rows-[190px] grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-flow-dense auto-rows-[168px] sm:auto-rows-[190px] grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {GALLERY.map((shot, i) => {
-          if (!shot.placeholder) realIndex++;
-          const idx = realIndex;
+          const idx = i;
           const tone = TONE[shot.tone ?? "gold"];
 
           const span =
             shot.span === "wide"
               ? "col-span-2 row-span-1"
-              : shot.span === "tall"
-                ? "col-span-1 row-span-2 md:col-span-1"
-                : "col-span-1 row-span-1";
+              : shot.span === "big"
+                ? "col-span-2 row-span-2"
+                : shot.span === "tall"
+                  ? "col-span-1 row-span-2"
+                  : "col-span-1 row-span-1";
 
-          /* ── empty slot: “put your photo here” ── */
-          if (shot.placeholder || !shot.src) {
-            return (
-              <div
-                key={i}
-                className={`reveal group relative overflow-hidden rounded-md border border-dashed border-line bg-ink-2/50 p-4 flex flex-col items-center justify-center text-center transition-colors duration-500 hover:border-gold/60 hover:bg-ink-3/60 ${span}`}
-                style={{ ["--rd" as string]: `${i * 55}ms` }}
-              >
-                <CameraIcon className="h-7 w-7 text-mute/60 group-hover:text-gold transition-colors duration-500" />
-                <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-mute group-hover:text-gold transition-colors duration-500">
-                  {shot.tag}
-                </p>
-                <p className="mt-1.5 text-[11px] leading-snug text-mute/70 max-w-[190px]">
-                  {shot.caption}
-                </p>
-                <span className="absolute right-2 top-2 font-mono text-[9px] text-line">
-                  /public
-                </span>
-              </div>
-            );
-          }
-
-          /* ── real photo ── */
           return (
             <button
               key={i}
@@ -140,11 +107,6 @@ export default function Gallery() {
           );
         })}
       </div>
-
-      <p className="mt-5 font-mono text-[10px] leading-relaxed tracking-[0.12em] text-mute/60 uppercase">
-        Photos are placeholders · edit{" "}
-        <span className="text-teal normal-case tracking-normal">src/data.ts → GALLERY</span> to add your own
-      </p>
 
       {/* ── lightbox ── */}
       {open !== null && real[open] && (

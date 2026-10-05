@@ -6,7 +6,6 @@ import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
 import Diamond from "./components/Diamond";
 import People from "./components/People";
-import Blog from "./components/Blog";
 import {
   ABOUT_ME,
   CERTS,
@@ -762,20 +761,6 @@ function PeopleSection() {
   );
 }
 
-/* ── 08 · blog ───────────────────────────────────────────────────────── */
-function BlogSection() {
-  return (
-    <Section
-      id="blog"
-      index="08"
-      title="Blog"
-      lede="Longer-form writing on medical AI, uncertainty and research practice."
-    >
-      <Blog />
-    </Section>
-  );
-}
-
 /* ── 11 · skills ─────────────────────────────────────────────────────── */
 function Skills() {
   const [armed, setArmed] = useState(false);
@@ -1011,7 +996,6 @@ export default function App() {
         <PeopleSection />
         <DiamondSection />
         <GallerySection />
-        <BlogSection />
         <Experience />
         <Education />
         <Skills />

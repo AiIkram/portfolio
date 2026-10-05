@@ -109,11 +109,8 @@ export const GALLERY: Shot[] = [
 ];
 ```
 
-`span` controls the tile size in the mosaic: `"tall"`, `"wide"` or `"normal"`.
-Any entry with `placeholder: true` renders an empty "add a photo" slot —
-delete the field once you supply a real `src`.
-
-External image URLs also work, e.g. `src: "https://images.pexels.com/..."`.
+`span` controls the tile size in the mosaic: `"tall"`, `"wide"`, `"big"` (2×2) or `"normal"`.
+External image URLs also work.
 
 ### Writing a blog post
 
