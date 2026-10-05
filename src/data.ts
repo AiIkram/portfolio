@@ -1,9 +1,3 @@
-/**
- * ─────────────────────────────────────────────────────────────
- *  ALL SITE CONTENT LIVES HERE — edit this file to update the site.
- * ─────────────────────────────────────────────────────────────
- */
-
 export const PROFILE = {
   name: "Ikram Aissiou",
   firstName: "IKRAM",
@@ -22,23 +16,10 @@ export const PROFILE = {
     scholar: "https://scholar.google.com/citations?user=UiSUKFEAAAAJ",
   },
 
-  /**
-   * 📷 YOUR PORTRAIT — replace the `src` below with your own photo.
-   *
-   *    1. Put your file in the project's  public/  folder,
-   *       e.g.  public/images/portrait.jpg
-   *    2. Reference it with a RELATIVE path — no leading slash:
-   *         src: "images/portrait.jpg"
-   *
-   *    A leading slash ("/images/...") breaks when the site is served from a
-   *    GitHub Pages sub-path such as /portfolio/, so keep it relative.
-   *
-   *    A direct image URL works too. Recommended: portrait crop, ~900×1200px.
-   */
   portrait: {
-    src: "https://images.pexels.com/photos/5473315/pexels-photo-5473315.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "images/portrait.jpg",
     alt: "Ikram Aissiou — portrait",
-    caption: "Replace with your own portrait → src/data.ts → PROFILE.portrait",
+    caption: "Algiers, Algeria",
   },
 };
 
@@ -228,7 +209,7 @@ export const NEWS = [
   {
     date: "2026",
     kind: "SERVICE",
-    badge: "PARK-GNN", "BASIRA Lab",
+    badge: "PARK-GNN · BASIRA Lab",
     text: "Designed and organised the PARK-GNN Challenge — Parkinson's disease detection formulated as node classification on graphs constructed from acoustic features, with a live leaderboard and automated scoring.",
     tone: "teal",
   },
@@ -920,25 +901,6 @@ export const SKILLS: Record<string, string[]> = {
 
 export const SOFT_SKILLS = ["Communication", "Collaboration", "Teamwork"];
 
-/**
- * ─────────────────────────────────────────────────────────────
- *  ✍️  BLOG — write a post by adding an object to POSTS.
- *
- *    · slug     → short unique id used in the URL fragment
- *    · title    → the heading
- *    · date     → free-form, e.g. "12 March 2026"
- *    · read     → reading time shown on the card
- *    · tags     → small chips on the card
- *    · excerpt  → one or two sentences shown on the card
- *    · body     → array of paragraphs. Use "**text**" inside a paragraph to
- *                 render that span in the accent colour and semibold.
- *    · link     → optional external URL; if set the card links out instead
- *                 of opening the in-site reader
- *    · tone     → "gold" | "teal" | "coral" | "ice"
- *
- *  Posts appear newest-first as written; no other change is needed.
- * ─────────────────────────────────────────────────────────────
- */
 /*
 export type Post = {
   slug: string;
@@ -1026,93 +988,71 @@ export const POSTS: Post[] = [
   },
 ];
 
+*/
+
 export const LANGUAGES = [
   { name: "Arabic", level: "Native", pct: 100 },
   { name: "English", level: "Fluent", pct: 92 },
   { name: "French", level: "Intermediate", pct: 65 },
 ];
-*/
 
-/**
- * ─────────────────────────────────────────────────────────────
- *  📷 GALLERY — this is where your pictures go.
- *
- *    · src     → a RELATIVE path to a file in public/, e.g.
- *                  src: "images/miccai-2025.jpg"
- *                (file lives at public/images/miccai-2025.jpg)
- *                NO leading slash — see the note in PROFILE.portrait.
- *                A direct image URL also works.
- *    · caption → shown under the photo and in the lightbox
- *    · tag     → the small coloured label on the card
- *    · span    → layout size: "tall" | "wide" | "normal"
- *
- *  Set `placeholder: true` to render an empty “add your photo” slot.
- * ─────────────────────────────────────────────────────────────
- */
+
 export type Shot = {
-  src?: string;
+  src: string;
   caption: string;
   tag: string;
-  span?: "tall" | "wide" | "normal";
-  placeholder?: boolean;
+  span?: "tall" | "wide" | "big" | "normal";
   tone?: "gold" | "teal" | "coral" | "ice";
 };
 
 export const GALLERY: Shot[] = [
   {
-    src: "https://images.pexels.com/photos/5723883/pexels-photo-5723883.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    caption: "MICCAI 2025 poster session — Daejeon, South Korea.",
+    src: "images/miccai-2025-poster-booth.jpg",
+    caption: "Presenting at the Deep Breath Workshop, MICCAI 2025 — Daejeon, South Korea.",
     tag: "MICCAI 2025",
-    span: "wide",
+    span: "tall",
     tone: "gold",
   },
   {
-    placeholder: true,
-    caption: "Your photo here — drop a file into /public and set the src.",
-    tag: "Add a photo",
-    span: "normal",
-    tone: "teal",
-  },
-  {
-    src: "https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    caption: "Reading DCE-MRI phases for the MAMA-MIA breast segmentation work.",
-    tag: "Research",
-    span: "tall",
+    src: "images/isles-poster-miccai-2026.jpg",
+    caption: "In front of the ISLES '26 poster — SWITCH+ Workshop, MICCAI 2026.",
+    tag: "MICCAI 2026",
+    span: "big",
     tone: "coral",
   },
   {
-    src: "https://images.pexels.com/photos/9275222/pexels-photo-9275222.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-    caption: "Workshop talks — see you at MICCAI 2026, Strasbourg.",
-    tag: "Conference",
+    src: "images/miccai-2025-poster.jpg",
+    caption: "Selective Phase-Aware Training of nnU-Net — MICCAI 2025 poster.",
+    tag: "MAMA-MIA",
+    span: "tall",
+    tone: "gold",
+  },
+  {
+    src: "images/basira-cohort-call.jpg",
+    caption: "BASIRA 2026 cohort call with Prof. Islem Rekik.",
+    tag: "BASIRA 2026",
+    span: "wide",
+    tone: "teal",
+  },
+  {
+    src: "images/neuromatch-session.jpg",
+    caption: "Computational neuroscience project session — Neuromatch Academy.",
+    tag: "Neuromatch",
     span: "wide",
     tone: "ice",
   },
   {
-    src: "https://images.pexels.com/photos/5496464/pexels-photo-5496464.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-    caption: "Late-night training runs for the PARK-GNN leaderboard.",
-    tag: "Lab",
-    span: "normal",
-    tone: "gold",
-  },
-  {
-    placeholder: true,
-    caption: "Teaching, GDSC events, or a team photo.",
-    tag: "Add a photo",
-    span: "normal",
-    tone: "coral",
-  },
-  {
-    src: "https://images.pexels.com/photos/6011605/pexels-photo-6011605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    caption: "PET/CT review for the HECKTOR head-and-neck dual-branch pipeline.",
-    tag: "Oncology",
-    span: "normal",
+    src: "images/winter-school-mbzuai.jpg",
+    caption: "Hands-on workshop session — MICCAI Winter School, MBZUAI.",
+    tag: "Winter School",
+    span: "wide",
     tone: "teal",
   },
   {
-    src: "https://images.pexels.com/photos/5723875/pexels-photo-5723875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    caption: "ISLES '26 — bilateral asymmetry as a structural prior for stroke lesions.",
-    tag: "Neuro",
-    span: "tall",
-    tone: "ice",
+    src: "images/miccai-2026-committee.jpg",
+    caption: "MICCAI 2026 community session — committee members.",
+    tag: "MICCAI 2026",
+    span: "wide",
+    tone: "coral",
   },
 ];
