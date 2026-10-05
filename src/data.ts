@@ -95,31 +95,31 @@ export const ABOUT_ME = [
 export const HIGHLIGHTS = [
   {
     short: "NeuroGraphMamba",
-    cite: "(Aissiou* et al., AMAI @ MICCAI 2026)",
+    cite: "(Ikram Aissiou*, Naima Boukhiar, Sam Guessoum, Riad Fellah · AMAI @ MICCAI 2026)",
     desc: "Spatial-temporal graph state-space architecture for patient-independent epileptic seizure detection",
     tone: "coral",
   },
   {
     short: "HECKTOR 2026",
-    cite: "(Aissiou* et al., HECKTOR Challenge @ MICCAI 2026)",
+    cite: "(Ikram Aissiou*, Riad Fellah, Sam Guessoum, Naima Boukhiar · HECKTOR Challenge @ MICCAI 2026)",
     desc: "Dual-branch fusion pipeline for head and neck tumour segmentation, TN staging and recurrence-free survival prediction",
     tone: "gold",
   },
   {
     short: "ISLES '26",
-    cite: "(Zayim & Aissiou* et al., SWITCH+ @ MICCAI 2026)",
+    cite: "(Beyza Zayim*, Ikram Aissiou*, Stephan Collins, Alain Lalande, Fabrice Meriaudeau · SWITCH+ @ MICCAI 2026)",
     desc: "Systematic nnU-Net comparison for ischemic stroke lesion segmentation using bilateral asymmetry as a structural prior",
     tone: "ice",
   },
   {
     short: "MAMA-MIA",
-    cite: "(Zayim & Aissiou et al., Deep Breath @ MICCAI 2025)",
+    cite: "(Beyza Zayim, Ikram Aissiou, Naima Boukhiar · Deep Breath @ MICCAI 2025)",
     desc: "Selective phase-aware nnU-Net training for robust breast cancer segmentation in multi-centre DCE-MRI",
     tone: "gold",
   },
   {
     short: "Immun-AI",
-    cite: "(Boukhiar & Aissiou et al., MICAD 2026, Springer LNEE)",
+    cite: "(Lokmane Amari, Naima Boukhiar, Ikram Aissiou , Yazid Bensefia · MICAD 2026, Springer LNEE)",
     desc: "Leakage-safe, explainable multimodal decision-support platform for systemic lupus erythematosus diagnosis",
     tone: "teal",
   },
@@ -475,28 +475,48 @@ export const MATES: Person[] = [
     role: "Co-author — MAMA-MIA 2025, ISLES 2026",
     affiliation: "Université Bourgogne Europe, France",
     link: "https://fr.linkedin.com/in/beyza-zayim-844547175",
-    note: "From MAMA-MIA to ISLES — two challenges, two years, one continuing collaboration.",
+    note: "From MAMA-MIA to ISLES:  two challenges, two years, one continuing collaboration and a timeless friendship.",
   },
   {
     name: "Naima Boukhiar",
     role: "Co-author — MAMA-MIA, HECKTOR, NeuroGraphMamba, Immun-AI",
     affiliation: "University of Algiers 1 Benyoucef Benkhedda, Algeria",
+    link: "https://www.linkedin.com/in/naima-boukhiar/",
+    note: "AI and software developer with a networking background (Cisco-certified). Co-author across the MICCAI challenge work: breast DCE-MRI, head-and-neck PET/CT and pediatric brain tumour segmentation.",
   },
   {
     name: "Sam Guessoum",
     role: "Co-author — HECKTOR 2026, NeuroGraphMamba",
     affiliation: "Algiers, Algeria",
+    note: "Contributed to the HECKTOR 2026 dual-branch PET/CT pipeline and to the NeuroGraphMamba seizure-detection architecture.",
   },
   {
-    name: "Riad Fellah",
+    name: "Ahmed Riadh Fellah",
     role: "Co-author — HECKTOR 2026, NeuroGraphMamba",
     affiliation: "Algiers, Algeria",
+    note: "Contributed to the HECKTOR 2026 dual-branch PET/CT pipeline and to the NeuroGraphMamba seizure-detection architecture.",
   },
   {
     name: "Bensefia Yazid",
     role: "Co-author — Immun-AI, MICAD 2026",
     affiliation: "Algiers, Algeria",
+    note: "Co-author of Immun-AI, the leakage-safe multimodal decision-support platform for lupus diagnosis.",
   },
+  {
+    name: "Lokmane Amari",
+    role: "Team member — Immun-AI",
+    affiliation: "Algiers, Algeria",
+    note: "Part of the Immun-AI team building the explainable multimodal platform for systemic lupus erythematosus diagnosis.",
+  },
+  {
+    name: "Madjda Khedimi",
+    role: "Collaborator",
+    affiliation:
+      "Ph.D. candidate, Dept. of Electrical and Information Engineering, Tianjin University, China",
+    link: "https://www.linkedin.com/in/madjda-khedimi-336154162/",
+    note: "Research on speech and image processing and on deep learning for Parkinson's disease detection.",
+  },
+
 ];
 
 export const COMMUNITIES = [
