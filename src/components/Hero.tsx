@@ -3,8 +3,10 @@ import { usePointerParallax } from "../lib/hooks";
 
 const ORBIT_TAGS = [
   { label: "MICCAI 2026", tone: "text-gold border-gold/40 bg-ink/85", top: "6%", left: "-12%" },
-  { label: "AMAI · 1st author", tone: "text-teal border-teal/40 bg-ink/85", top: "27%", left: "76%" },
-  { label: "HECKTOR", tone: "text-coral border-coral/40 bg-ink/85", top: "56%", left: "-16%" },
+  { label: "AMAI 2026", tone: "text-teal border-teal/40 bg-ink/85", top: "27%", left: "76%" },
+  { label: "SWITCH+ 2026", tone: "text-teal border-teal/40 bg-ink/85", top: "32%", left: "-18%" },
+  { label: "HECKTOR 2026", tone: "text-coral border-coral/40 bg-ink/85", top: "56%", left: "-16%" },
+  { label: "DeepBreath 2025", tone: "text-coral border-coral/40 bg-ink/85", top: "52%", left: "78%" },
   { label: "ISLES '26", tone: "text-ice border-ice/40 bg-ink/85", top: "78%", left: "72%" },
   { label: "EMNLP 2026", tone: "text-gold border-gold/40 bg-ink/85", top: "94%", left: "6%" },
 ];
