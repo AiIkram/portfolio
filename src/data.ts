@@ -336,6 +336,9 @@ export const PAPERS: Paper[] = [
     status: "Accepted",
     tone: "gold",
     group: "oncology",
+    links: [
+      { label: "HECKTOR_014", url: "https://papers.miccai.org/miccai-2026-sat/paper/HECKTOR_014.pdf" },
+    ],
   },
   {
     year: "2026",
@@ -355,6 +358,9 @@ export const PAPERS: Paper[] = [
     status: "Accepted",
     tone: "coral",
     group: "neuro",
+    links: [
+      { label: "ISLES_028", url: "https://papers.miccai.org/miccai-2026-sat/paper/ISLES_028.pdf" },
+    ],
   },
   {
     year: "2026",
@@ -365,6 +371,9 @@ export const PAPERS: Paper[] = [
     status: "Accepted",
     tone: "teal",
     group: "trust",
+    links: [
+      { label: "2026.emnlp-main.1762", url: "https://aclanthology.org/2026.emnlp-main.1762/" },
+    ],
   },
   {
     year: "2025",
@@ -403,6 +412,9 @@ export const PAPERS: Paper[] = [
     status: "Accepted",
     tone: "teal",
     group: "trust",
+    links: [
+      { label: "MICAD2026", url: "https://www.researchgate.net/profile/Lokmane-Amari/publication/417299544_Immun-AI_A_Leakage-Safe_Explainable_Multimodal_Decision-Support_Platform_for_Systemic_Lupus_Erythematosus_Diagnosis/links/6ae7abff1ad3626457d77268/Immun-AI-A-Leakage-Safe-Explainable-Multimodal-Decision-Support-Platform-for-Systemic-Lupus-Erythematosus-Diagnosis.pdf" },
+    ],
   },
 ];
 
